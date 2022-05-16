@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { AuthContext } from '../context/auth'
 
@@ -40,19 +40,20 @@ export default function Login() {
 
 	return (
 		<div className="container-background">
-			<form onSubmit={handleSubmit}>
+			<div>
+				<form className="login-form" onSubmit={handleSubmit}>
 
-				<label htmlFor="email">Email: </label>
-				<input type="text" value={email} onChange={handleEmail} />
+					<label className="login-label" htmlFor="email">Email: </label>
+					<input className="login-input" type="text" value={email} onChange={handleEmail} />
 
-				<label htmlFor="password">Password: </label>
-				<input type="password" value={password} onChange={handlePassword} />
+					<label className="login-label" htmlFor="password">Password: </label>
+					<input className="login-input" type="password" value={password} onChange={handlePassword} />
 
-				<button type="submit">Log In</button>
-			</form>
+					<button className="login-button" type="submit">Log In</button>
+				</form>
 
 			{errorMessage && <h5>{errorMessage}</h5>}
-
+		</div>
 		</div>
 	)
 }

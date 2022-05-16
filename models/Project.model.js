@@ -8,14 +8,18 @@ const projectSchema = new Schema(
       
     },
     description: String,
+    date: Date,
     category: {
             type: String,
             enum: [
-                'biography',
-                'academic',
-                'other'
+                'Biography',
+                'Autobiography',
+                'Academic',
+                'Novel',
+                'Other'
             ]
         },
+    compensation: String,
   },
   {
     timestamps: true,

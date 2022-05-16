@@ -32,18 +32,18 @@ export default function Signup() {
 
 	return (
 		<div className="container-background">
-			<form onSubmit={handleSubmit}>
+			<form className="signup-form" onSubmit={handleSubmit}>
 
-				<label htmlFor="email">Email: </label>
-				<input type="text" value={email} onChange={handleEmail} />
+				<label className="signup-label" htmlFor="email">Email: </label>
+				<input className="signup-input" type="text" value={email} onChange={handleEmail} />
 
-				<label htmlFor="password">Password: </label>
-				<input type="password" value={password} onChange={handlePassword} />
+				<label className="signup-label" htmlFor="password">Password: </label>
+				<input className="signup-input" type="password" value={password} onChange={handlePassword} />
 
-				<label htmlFor="name">Name: </label>
-				<input type="text" value={name} onChange={handleName} />
+				<label className="signup-label" htmlFor="name">Name: </label>
+				<input className="signup-input" type="text" value={name} onChange={handleName} />
 
-				<button type="submit">Sign Up</button>
+				<button className="signup-button" type="submit">Sign Up</button>
 			</form>
 
 			{errorMessage && <h5>{errorMessage}</h5>}

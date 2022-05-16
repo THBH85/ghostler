@@ -2,6 +2,7 @@
 body {
     padding: 0;
     margin: 0;
+    overflow: hidden;
 }
 
 .header {
@@ -9,6 +10,37 @@ body {
     height: 50px;
     display: flex;
     align-items: center;
+    
+}
+
+.ghost-icon-invert {
+    width: 75px;
+    height: 75px;
+}
+
+.home-row-1 {
+    display: flex;
+    margin-top: 60px;
+    align-items: center;
+}
+
+.home-column-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around
+}
+
+.home-column-1 h3 {
+    margin-top: -50px;
+    font-family: Poppins;
+    margin-left: 80px;
+}
+
+.home-row-1 h1 {
+    font-size: 4rem;
+    margin-left: -50px;
+    font-family: Poppins;
 }
 
 .container-background {
@@ -17,18 +49,27 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
+    border: 1px solid #000;
+    top: 0;
+    padding: 0;
+    margin: 0;
 }
+
 
 .container-home-intro {
     color: white;
-    margin-top: 50px;
     margin-left: 100px;
+    
+}
+
+.link {
     text-decoration: none;
+
 }
 
 nav {
     width: 300px;
-
 }
 
 nav ul {
@@ -43,22 +84,24 @@ nav a {
     color: #131111;
 }
 
-form {
-    height: 450px;
+/* 
+SignUp
+*/
+
+.signup-form {
+    height: 400px;
     width: 300px;
     background-color: rgba(255, 255, 255, 0.13);
-    position: relative;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
     border-radius: 10px;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(5px);
     border: 2px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
-    padding: 50px 35px;
+    padding: 35px 35px;
+    margin-left: 200px;
+    margin-top: 80px;
 }
 
-form * {
+.signup-form * {
     font-family: 'Poppins', sans-serif;
     color: #ffffff;
     letter-spacing: 0.5px;
@@ -66,12 +109,93 @@ form * {
     border: none;
 }
 
-label {
+.signup-label {
     display: block;
-    margin-top: 30px;
+    margin-top: 10px;
     font-size: 16px;
     font-weight: 500;
 }
+
+.signup-input {
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.signup-button {
+    margin-top: 50px;
+    width: 100%;
+    background-color: #ffffff;
+    color: #080710;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* 
+LogIn
+*/
+
+.login-form {
+    height: 300px;
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.13);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    padding: 35px 35px;
+    margin-left: 200px;
+    margin-top: 140px;
+}
+
+.login-form * {
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
+
+.login-label {
+    display: block;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.login-input {
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.login-button {
+    margin-top: 50px;
+    width: 100%;
+    background-color: #ffffff;
+    color: #080710;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 
 input {
     display: block;

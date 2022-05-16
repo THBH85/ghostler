@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import ProjectCard from '../components/ProjectCard'
-import AddProject from '../components/AddProject'
 import { Link } from 'react-router-dom'
 
 export default function AllProjects() {

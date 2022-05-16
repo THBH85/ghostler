@@ -5,7 +5,7 @@ import Signup from './pages/Signup';
 import Login from './pages/Login';
 import AllProjects from './pages/AllProjects'
 import ProjectDetails from './pages/ProjectDetails'
-//import EditProject from './pages/EditProject'
+import EditProjects from './pages/EditProjects'
 import Navbar from './components/Navbar';
 import AddProject from './components/AddProject';
 import { Routes, Route } from 'react-router-dom';
@@ -22,6 +22,8 @@ function App() {
         <Route path='/projects' element={<AllProjects />} />
         <Route path='/projects/:id' element={<ProjectDetails />} />
         <Route path='/projects/add' element={<AddProject />} />
+        <Route path='/projects/edit/:id' element={<EditProjects />} />
+
       </Routes>
     </div>
   );

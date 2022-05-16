@@ -12,8 +12,8 @@ router.get('/', (req, res, next) => {
 
 // create a project
 router.post('/', (req, res, next) => {
-  const { title, description } = req.body
-  Project.create({ title, description })
+  const { title, description, category, date, compensation } = req.body
+  Project.create({ title, description, category, date, compensation })
     .then(project => {
       res.status(201).json(project)
     })
@@ -24,7 +24,13 @@ router.post('/', (req, res, next) => {
 router.get('/:id', (req, res, next) => {
   Project.findById(req.params.id)
     .then(project => {
-      res.status(200).json(project)
+     const projectCopy = JSON.parse(JSON.stringify(project)); 
+     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
+     projectCopy.dateString = project.date.toLocaleDateString('en-US', options) 
+     
+     projectCopy.timeString = project.date.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
+      console.log("hello", projectCopy)
+      res.status(200).json({project : projectCopy})
     })
     .catch(err => next(err))
 });
