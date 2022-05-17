@@ -50,10 +50,11 @@ export default function AllProjects() {
 
 	return (
 		<div>
-			<div>
-				<h1>All Projects</h1>
-				<form>
-					<input type="text" value={search} onChange={handleSearch} placeholder="Search for specific projects "></input>
+			<div className='all-projects-container'>
+				<h1>Check out all the amazing projects</h1>
+				<div >
+				<form className="filter-row">
+					<input className="search-bar" type="text" value={search} onChange={handleSearch} placeholder="Search for specific projects "></input>
 					<label htmlFor="isAcademic">Show only academic projects: </label>
 					<input type="checkbox" checked={isAcademic} onChange={handleIsAcademicChange}></input>
 					<label htmlFor="filterCategories">Filter categories: </label>
@@ -65,6 +66,7 @@ export default function AllProjects() {
 							))}
 					</select>
 				</form>
+				</div>
 				{projects
 					.filter(project => {
 						return project.title.includes(search);
