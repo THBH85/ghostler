@@ -13,7 +13,8 @@ export default function AddProject(props) {
 	const handleSubmit = e => {
 		e.preventDefault()
 		// send the form data to the backend
-		axios.post('/api/projects', { title, description, category, date, compensation })
+		const storedToken=localStorage.getItem('authToken')
+		axios.post('/api/projects', { title, description, category, date, compensation }, { headers: { Authorization: `Bearer ${storedToken}` } })
 			.then(response => {
 				console.log(response)
 				// reset the form

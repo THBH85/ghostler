@@ -18,6 +18,12 @@ body {
     height: 75px;
 }
 
+.home-box-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+
 .home-row-1 {
     display: flex;
     margin-top: 60px;
@@ -41,6 +47,38 @@ body {
     font-size: 4rem;
     margin-left: -50px;
     font-family: Poppins;
+}
+
+.home-box {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    font-family: Poppins;
+    font-weight: 100;
+    margin-right: 30px;
+    border: 1px solid white;
+    border-radius: 1em;
+    padding: 15px 20px;
+}
+
+.home-box p {
+    text-decoration: none;
+    color: white;
+}
+
+.home-box h3 {
+    text-decoration: none;
+    color: white;
+}
+
+.home-box-row {
+    display: flex;
+    margin-top: 50px;
+}
+
+.home-box-row-2 {
+    display: flex;
+    align-items: center;
 }
 
 .container-background {

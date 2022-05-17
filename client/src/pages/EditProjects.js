@@ -13,7 +13,8 @@ export default function EditProject() {
 
 	useEffect(() => {
 		console.log('use effect')
-		axios.get(`/api/projects/${id}`)
+		const storedToken=localStorage.getItem('authToken')
+		axios.get(`/api/projects/${id}`, { headers: { Authorization: `Bearer ${storedToken}` } })
 			.then(response => {
 				const { title, description } = response.data
 				setTitle(title)
@@ -25,8 +26,9 @@ export default function EditProject() {
 	const handleSubmit = e => {
 		e.preventDefault()
 		const requestBody = { title, description }
+		const storedToken=localStorage.getItem('authToken')
 		// put request to the backend to update the project
-		axios.put(`/api/projects/${id}`, requestBody)
+		axios.put(`/api/projects/${id}`, requestBody, { headers: { Authorization: `Bearer ${storedToken}` } })
 			.then(() => {
 				// redirect to the project list
 				navigate('/projects')
@@ -35,7 +37,8 @@ export default function EditProject() {
 	}
 
 	const deleteProject = () => {
-		axios.delete(`/api/projects/${id}`)
+		const storedToken=localStorage.getItem('authToken')
+		axios.delete(`/api/projects/${id}`, { headers: { Authorization: `Bearer ${storedToken}` } })
 			.then(() => {
 				// redirect to the projects list
 				navigate('/projects')

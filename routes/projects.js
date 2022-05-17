@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const Project = require('../models/Project.model')
+const { isAuthenticated } = require('../middleware/jwt')
 
 // get all the projects
 router.get('/', (req, res, next) => {
@@ -11,7 +12,7 @@ router.get('/', (req, res, next) => {
 });
 
 // create a project
-router.post('/', (req, res, next) => {
+router.post('/', isAuthenticated, (req, res, next) => {
   const { title, description, category, date, compensation } = req.body
   Project.create({ title, description, category, date, compensation })
     .then(project => {
@@ -21,7 +22,7 @@ router.post('/', (req, res, next) => {
 });
 
 // get a specific project
-router.get('/:id', (req, res, next) => {
+router.get('/:id', isAuthenticated, (req, res, next) => {
   Project.findById(req.params.id)
     .then(project => {
      const projectCopy = JSON.parse(JSON.stringify(project)); 
@@ -36,7 +37,7 @@ router.get('/:id', (req, res, next) => {
 });
 
 // update a project
-router.put('/:id', (req, res, next) => {
+router.put('/:id', isAuthenticated, (req, res, next) => {
   const { title, description } = req.body
   Project.findByIdAndUpdate(req.params.id, {
     title,
@@ -49,7 +50,7 @@ router.put('/:id', (req, res, next) => {
 });
 
 // delete a project
-router.delete('/:id', (req, res, next) => {
+router.delete('/:id', isAuthenticated, (req, res, next) => {
   Project.findByIdAndDelete(req.params.id)
     .then(() => {
       res.status(200).json({ message: 'project deleted' })

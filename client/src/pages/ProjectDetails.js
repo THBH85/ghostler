@@ -10,7 +10,8 @@ export default function ProjectDetails() {
 	
 
 	useEffect(() => {
-		axios.get(`/api/projects/${id}`)
+		const storedToken=localStorage.getItem('authToken')
+		axios.get(`/api/projects/${id}`, { headers: { Authorization: `Bearer ${storedToken}` } })
 			.then(response => {
 				console.log("hello", response.data)
 				setProject(response.data.project)
