@@ -13,8 +13,8 @@ router.get('/', (req, res, next) => {
 
 // create a project
 router.post('/', isAuthenticated, (req, res, next) => {
-  const { title, description, category, date, compensation } = req.body
-  Project.create({ title, description, category, date, compensation })
+  const { title, description, academic, category, date, compensation } = req.body
+  Project.create({ title, description, academic, category, date, compensation })
     .then(project => {
       res.status(201).json(project)
     })

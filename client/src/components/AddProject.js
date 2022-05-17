@@ -5,24 +5,28 @@ export default function AddProject(props) {
 
 	const [title, setTitle] = useState('')
 	const [description, setDescription] = useState('')
+	const [academic, setAcademic] = useState('')
     const [category, setCategory] = useState('')
 	const [date, setDate] = useState('')
 	const [compensation, setCompensation] = useState('')
+	
 	
 	
 	const handleSubmit = e => {
 		e.preventDefault()
 		// send the form data to the backend
 		const storedToken=localStorage.getItem('authToken')
-		axios.post('/api/projects', { title, description, category, date, compensation }, { headers: { Authorization: `Bearer ${storedToken}` } })
+		axios.post('/api/projects', { title, description, academic, category, date, compensation }, { headers: { Authorization: `Bearer ${storedToken}` } })
 			.then(response => {
 				console.log(response)
 				// reset the form
 				setTitle('')
 				setDescription('')
+				setAcademic('')
                 setCategory('')
 				setDate('')
 				setCompensation('')
+				
 				// refresh the list of projects in 'AllProjects'
 				props.getAllProjects()
 			})
@@ -48,14 +52,23 @@ export default function AddProject(props) {
 					onChange={e => setDescription(e.target.value)}
 				/>
 
+				<label htmlFor="academic">Academic</label>
+                <input 
+					type="checkbox"
+					value={academic}
+					onChange={e => setAcademic(e.target.checked)}
+				/>
+
                 <label htmlFor="category">Project category:</label>
                 <select 
 					onChange={e => setCategory(e.target.value)}
         			value={category}
 				>
+					<option value="Course Paper" >Course Paper</option>
+					<option value="Bachelor Thesis" >Bachelor Thesis</option>
+					<option value="Master Thesis" >Master Thesis</option>
                     <option value="Biography" >Biography</option>
 					<option value="Autobiography" >Autobiography</option>
-                    <option value="Academic" >Academic</option>
                     <option value="Novel" >Novel</option>
 					<option value="Other" >Other</option>
                 </select>

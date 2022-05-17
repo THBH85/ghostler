@@ -9,12 +9,15 @@ const projectSchema = new Schema(
     },
     description: String,
     date: Date,
+    academic: Boolean,
     category: {
             type: String,
             enum: [
+                'Course Paper',
+                'Bachelor Thesis',
+                'Master Thesis',
                 'Biography',
                 'Autobiography',
-                'Academic',
                 'Novel',
                 'Other'
             ]

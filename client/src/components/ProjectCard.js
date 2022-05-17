@@ -5,7 +5,7 @@ export default function ProjectCard({ title, description, _id }) {
 	return (
 		<div>
 			<Link className='link' to={`/projects/${_id}`}>
-            <div className='container-home-intro'>
+            <div>
 				<h3>Project title: {title}</h3>
                 <p>Project description: {description}</p>
 
