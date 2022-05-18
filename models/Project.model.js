@@ -1,16 +1,22 @@
 const { Schema, model } = require("mongoose");
 
 const projectSchema = new Schema(
-  {
-    title: {
-      type: String,
-      unique: true
-      
-    },
-    description: String,
-    date: Date,
-    academic: Boolean,
-    category: {
+
+    {
+        creator: {
+            type: Schema.Types.ObjectId,
+            ref: 'User',
+            required: true
+        },
+        title: {
+            type: String,
+            unique: true
+
+        },
+        description: String,
+        date: Date,
+        academic: Boolean,
+        category: {
             type: String,
             enum: [
                 'Course Paper',
@@ -22,11 +28,11 @@ const projectSchema = new Schema(
                 'Other'
             ]
         },
-    compensation: String,
-  },
-  {
-    timestamps: true,
-  }
+        compensation: String,
+    },
+    {
+        timestamps: true,
+    }
 );
 
 const Project = model("Project", projectSchema);

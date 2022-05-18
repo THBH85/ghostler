@@ -1,6 +1,8 @@
 const router = require("express").Router();
 const Project = require('../models/Project.model')
+const User = require('../models/User.model')
 const { isAuthenticated } = require('../middleware/jwt')
+const { default: mongoose } = require("mongoose");
 
 // get all the projects
 router.get('/', (req, res, next) => {
@@ -13,8 +15,10 @@ router.get('/', (req, res, next) => {
 
 // create a project
 router.post('/', isAuthenticated, (req, res, next) => {
-  const { title, description, academic, category, date, compensation } = req.body
-  Project.create({ title, description, academic, category, date, compensation })
+  
+  let { creator, title, description, academic, category, date, compensation, user } = req.body
+  
+  Project.create({ creator: user, title, description, academic, category, date, compensation })
     .then(project => {
       res.status(201).json(project)
     })

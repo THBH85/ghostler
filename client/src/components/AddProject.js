@@ -1,25 +1,39 @@
 import axios from 'axios'
-import React, { useState } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
+import { AuthContext } from '../context/auth'
 
 export default function AddProject(props) {
 
+
+	const [creator, setCreator] = useState('')
 	const [title, setTitle] = useState('')
 	const [description, setDescription] = useState('')
 	const [academic, setAcademic] = useState('')
 	const [category, setCategory] = useState('')
 	const [date, setDate] = useState('')
 	const [compensation, setCompensation] = useState('')
+	
+	const {user, verifyStoredToken, isLoading} = useContext(AuthContext)
 
-
+	// useEffect(() => {
+	//	 verifyStoredToken();
+	//	 if (!isLoading) {
+	//
+	//		 setCreator(user?._id);
+	//	 }
+	//	console.log("USER: ", user?.id);
+    //}, [isLoading]);
 
 	const handleSubmit = e => {
 		e.preventDefault()
+		
 		// send the form data to the backend
 		const storedToken = localStorage.getItem('authToken')
-		axios.post('/api/projects', { title, description, academic, category, date, compensation }, { headers: { Authorization: `Bearer ${storedToken}` } })
+		axios.post('/api/projects', { user, title, description, academic, category, date, compensation }, { headers: { Authorization: `Bearer ${storedToken}` } })
 			.then(response => {
 				console.log(response)
 				// reset the form
+				setCreator('')
 				setTitle('')
 				setDescription('')
 				setAcademic('')
