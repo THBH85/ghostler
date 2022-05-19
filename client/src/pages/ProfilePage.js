@@ -76,7 +76,7 @@ export default function ProfilePage() {
 
 					.filter(project => {
 						if (isProjectApplicant) {
-							return project.applicants[0] === user.id 
+							return project.applicants[0] === user._id 
 
 							
 						}

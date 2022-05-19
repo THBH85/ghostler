@@ -44,39 +44,43 @@ export default function ProjectDetails() {
 
 	return (
 		<>
-			{project === null ? <h3>Loading...</h3> :
-				<div className='container-background'>
-					<div className='project-details-box'>
-						<h3>Title: {project.title}</h3>
-						<h5>Description: {project.description}</h5>
-						<h5>Category: {project.category}</h5>
-						<h5>Deadline: {project.dateString} ({project.timeString})</h5>
-						<h5>Compensation: {project.compensation}</h5>
-						<div className='project-details-row'>
-							{project.applicants.length > 0 ?
-								(<h5>Applicants: {
-									project.applicants.map(applicant => (
-										applicant?.name
-									))
-								}</h5>)
-								: <p></p>}
-							{project.applicants.length > 0 && <button className='uni-button' type='text'>Contact Applicant</button>}
+			{
+				user != null ? (
+					project === null ? <h3>Loading...</h3> :
+					<div className='container-background'>
+						<div className='project-details-box'>
+							<h3>Title: {project.title}</h3>
+							<h5>Description: {project.description}</h5>
+							<h5>Category: {project.category}</h5>
+							<h5>Deadline: {project.dateString} ({project.timeString})</h5>
+							<h5>Compensation: {project.compensation}</h5>
+							<div className='project-details-row'>
+								{project.applicants.length > 0 ?
+									(<h5>Applicants: {
+										project.applicants.map(applicant => (
+											applicant?.name
+										))
+									}</h5>)
+									: <p></p>}
+								{project.applicants.length > 0 && <button className='uni-button' type='text'>Contact Applicant</button>}
+							</div>
+							<Link to={`/projects/edit/${project._id}`}>
+								{project.creator === user._id && <button className='margin-top-button'>Edit Project</button>}
+							</Link>
+							<form onSubmit={handleSubmit}>
+								{project.creator !== user._id && <button className='margin-top-button' type='submit'>Apply</button>}
+							</form>
 						</div>
-						<Link to={`/projects/edit/${project._id}`}>
-							{project.creator === user._id && <button className='margin-top-button'>Edit Project</button>}
-						</Link>
-						<form onSubmit={handleSubmit}>
-							{project.creator !== user._id && <button className='margin-top-button' type='submit'>Apply</button>}
-						</form>
-					</div>
 
-				</div>
+					</div>
+				) : (
+					<div className='please-register'>
+					<h3>Only registered users can see project details and create or apply for projects</h3>
+					<p>Please Sign Up or Log In</p>
+					</div>
+				)
+			
 			}
 		</>
 	)
 }
-
-
-
-//  project.dateString = project.date.toLocaleDateString('de-DE'), 
-//  project.timeString = project.date.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
