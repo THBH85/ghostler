@@ -28,6 +28,7 @@ router.post('/', isAuthenticated, (req, res, next) => {
 // get a specific project
 router.get('/:id', isAuthenticated, (req, res, next) => {
   Project.findById(req.params.id)
+    .populate('applicants')
     .then(project => {
      const projectCopy = JSON.parse(JSON.stringify(project)); 
      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
@@ -42,10 +43,11 @@ router.get('/:id', isAuthenticated, (req, res, next) => {
 
 // update a project
 router.put('/:id', isAuthenticated, (req, res, next) => {
-  const { title, description } = req.body
+  const { title, description, applicants } = req.body
   Project.findByIdAndUpdate(req.params.id, {
     title,
-    description
+    description,
+    applicants
   }, { new: true })
     .then(project => {
       res.status(200).json(project)

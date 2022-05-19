@@ -8,6 +8,12 @@ const projectSchema = new Schema(
             ref: 'User',
             required: true
         },
+        applicants: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'User'
+        }
+    ],
         title: {
             type: String,
             unique: true

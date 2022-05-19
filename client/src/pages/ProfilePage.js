@@ -37,13 +37,15 @@ export default function ProfilePage() {
 	return (
 		<div>
 			<div className='all-projects-container'>
-				<h1>Hello User</h1>
+				<h1>Hello {user.name}</h1>
 				<div >
 				<form className="filter-row">
 					
 					<label htmlFor="isProjectCreator">Show all projects I created</label>
 					<input type="checkbox" checked={isProjectCreator} onChange={handleProjectCreatorChange}></input>
-					
+					<Link to="/projects/add">
+					<button className="add-project-button" type="text">Add project</button>
+					</Link>
 				</form>
 				</div>
 				{projects
@@ -58,7 +60,7 @@ export default function ProfilePage() {
 					
 					.map(project => <ProjectCard key={project._id} {...project} />)}
 
-				<Link to="/projects/add">Add a Project</Link>
+				
 			</div>
 		</div>
 	)

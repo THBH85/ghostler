@@ -1,4 +1,3 @@
-
 body {
     padding: 0;
     margin: 0;
@@ -10,7 +9,7 @@ body {
     height: 50px;
     display: flex;
     align-items: center;
-    
+
 }
 
 .ghost-icon-invert {
@@ -97,7 +96,7 @@ body {
 .container-home-intro {
     color: white;
     margin-left: 100px;
-    
+
 }
 
 .link {
@@ -106,7 +105,7 @@ body {
 }
 
 nav {
-    width: 300px;
+    width: 500px;
 }
 
 nav ul {
@@ -270,7 +269,7 @@ button {
     align-items: center;
     justify-content: space-around;
     padding: 10px 10px;
-    margin: 0px 10px 20px 10px;   
+    margin: 0px 10px 20px 10px;
     border: 1px solid rgb(120, 117, 117);
 }
 
@@ -300,14 +299,14 @@ button {
 
 .project-details-box {
     height: 400px;
-    width: 400px;
+    width: 500px;
     background-color: rgba(255, 255, 255, 0.13);
     border-radius: 10px;
     backdrop-filter: blur(5px);
     border: 2px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
     padding: 35px 35px;
-    margin-left: 150px;
+    margin-left: 100px;
     margin-top: 80px;
 }
 
@@ -360,13 +359,51 @@ button {
 }
 
 .add-project-button {
-    margin-top: 50px;
+
     width: 100%;
     background-color: #ffffff;
     color: #080710;
-    padding: 15px 0;
-    font-size: 18px;
+    padding: 10px 15px;
+    font-size: 14px;
     font-weight: 600;
     border-radius: 5px;
     cursor: pointer;
+    font-family: Poppins;
+}
+
+.uni-button {
+
+    width: 200px;
+    background-color: #ffffff;
+    color: #080710;
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: Poppins;
+
+}
+
+.add-project-row {
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-between;
+}
+
+.edit-project-row {
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-around;
+}
+
+.project-details-row {
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+    align-content: center;
+    justify-content: space-around;
+    border-radius: 10px;
+    border: 1px solid white;
+
 }

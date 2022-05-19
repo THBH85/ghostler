@@ -18,15 +18,14 @@ export default function Login() {
 		const requestBody = { email, password }
 		axios.post('/api/auth/login', requestBody)
 			.then(response => {
-				// redirect to projects
 				console.log('i have a token mothafukkas')
 				const token = response.data.authToken
 				// store the token
 				storeToken(token)
 				verifyStoredToken()
 					.then(() => {
-						// redirect to projects
-						navigate('/')
+						// redirect to profile
+						navigate('/profile')
 					})
 			})
 			.catch(err => {

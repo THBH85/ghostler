@@ -1,7 +1,17 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, {useContext} from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { AuthContext } from '../context/auth'
 
 export default function Navbar() {
+
+	const { logoutUser } = useContext(AuthContext)
+	const navigate = useNavigate()
+
+	function handleLogOutClick () {
+		logoutUser()
+		navigate('/')
+	}
+
 	return (
 		<div className="header">	
 			<nav>
@@ -18,6 +28,10 @@ export default function Navbar() {
 					<li>
 						<Link to="/projects">Projects</Link>
 					</li>
+					<li>
+						<Link to="/profile">myAccount</Link>
+					</li>
+					<button  onClick={handleLogOutClick}>Log out</button>
 				</ul>
 			</nav>
 		</div>

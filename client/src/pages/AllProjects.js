@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import ProjectCard from '../components/ProjectCard'
-import { Link } from 'react-router-dom'
 
 
 export default function AllProjects() {
@@ -87,7 +86,7 @@ export default function AllProjects() {
 					})
 					.map(project => <ProjectCard key={project._id} {...project} />)}
 
-				<Link to="/projects/add">Add a Project</Link>
+			
 			</div>
 		</div>
 	)
