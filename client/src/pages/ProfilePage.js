@@ -37,7 +37,7 @@ export default function ProfilePage() {
 	return (
 		<div>
 			<div className='all-projects-container'>
-				<h1>Hello {user.name}</h1>
+				<h1>Hello dear {user.name}</h1>
 				<div >
 				<form className="filter-row">
 					
