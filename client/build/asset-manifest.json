@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/static/css/main.3809752b.css",
+    "main.js": "/static/js/main.f320cbce.js",
+    "static/js/787.c4e7f8f9.chunk.js": "/static/js/787.c4e7f8f9.chunk.js",
+    "static/media/typewriter.jpg": "/static/media/typewriter.4c0a06c09168cc2db83e.jpg",
+    "static/media/dollar-coin.png": "/static/media/dollar-coin.49a65335904958fef979.png",
+    "static/media/magnifier.png": "/static/media/magnifier.981784db8dbf6837f931.png",
+    "static/media/ghost_icon_invert.png": "/static/media/ghost_icon_invert.3f8144ce078653725151.png",
+    "index.html": "/index.html",
+    "main.3809752b.css.map": "/static/css/main.3809752b.css.map",
+    "main.f320cbce.js.map": "/static/js/main.f320cbce.js.map",
+    "787.c4e7f8f9.chunk.js.map": "/static/js/787.c4e7f8f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3809752b.css",
+    "static/js/main.f320cbce.js"
+  ]
+}
