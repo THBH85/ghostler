@@ -9,7 +9,6 @@ body {
     height: 50px;
     display: flex;
     align-items: center;
-
 }
 
 .ghost-icon-invert {
@@ -33,7 +32,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around
+    justify-content: space-around;
 }
 
 .home-column-1 h3 {
@@ -96,16 +95,14 @@ body {
 .container-home-intro {
     color: white;
     margin-left: 100px;
-
 }
 
 .link {
     text-decoration: none;
-
 }
 
 nav {
-    width: 500px;
+    width: 400px;
 }
 
 nav ul {
@@ -138,7 +135,7 @@ SignUp
 }
 
 .signup-form * {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     color: #ffffff;
     letter-spacing: 0.5px;
     outline: none;
@@ -194,7 +191,7 @@ LogIn
 }
 
 .login-form * {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     color: #ffffff;
     letter-spacing: 0.5px;
     outline: none;
@@ -311,7 +308,7 @@ button {
 }
 
 .project-details-box * {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     color: #ffffff;
     letter-spacing: 0.5px;
     outline: none;
@@ -332,7 +329,7 @@ button {
 }
 
 .add-project-box * {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     color: #ffffff;
     letter-spacing: 0.5px;
     outline: none;
@@ -359,8 +356,33 @@ button {
 }
 
 .add-project-button {
+    width: 150px;
+    background-color: rgb(238, 232, 232);
+    color: #080710;
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: Poppins;
+    border: none;
+}
 
-    width: 100%;
+.log-out-button {
+    width: 150px;
+    background-color: rgb(238, 232, 232);
+    color: #080710;
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: Poppins;
+    border: none;
+}
+
+.uni-button {
+    width: 200px;
     background-color: #ffffff;
     color: #080710;
     padding: 10px 15px;
@@ -371,8 +393,8 @@ button {
     font-family: Poppins;
 }
 
-.uni-button {
-
+.margin-top-button {
+    margin-top: 20px;
     width: 200px;
     background-color: #ffffff;
     color: #080710;
@@ -382,7 +404,6 @@ button {
     border-radius: 5px;
     cursor: pointer;
     font-family: Poppins;
-
 }
 
 .add-project-row {
@@ -405,5 +426,4 @@ button {
     justify-content: space-around;
     border-radius: 10px;
     border: 1px solid white;
-
 }

@@ -63,10 +63,10 @@ export default function ProjectDetails() {
 							{project.applicants.length > 0 && <button className='uni-button' type='text'>Contact Applicant</button>}
 						</div>
 						<Link to={`/projects/edit/${project._id}`}>
-							{project.creator === user._id && <button className='uni-button'>Edit Project</button>}
+							{project.creator === user._id && <button className='margin-top-button'>Edit Project</button>}
 						</Link>
 						<form onSubmit={handleSubmit}>
-							{project.creator !== user._id && <button className='uni-button' type='submit'>Apply</button>}
+							{project.creator !== user._id && <button className='margin-top-button' type='submit'>Apply</button>}
 						</form>
 					</div>
 
